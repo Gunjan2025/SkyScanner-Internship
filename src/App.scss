@@ -1,0 +1,45 @@
+@import '~bpk-mixins';
+@import '~bpk-stylesheets/base';
+@mixin container {
+  max-width: $bpk-breakpoint-desktop;
+  margin: 0 auto;
+}
+
+.App {
+  text-align: center;
+
+  &__header {
+    $bpk-spacing-lg: 24px; 
+    background-color: $bpk-color-sky-blue;
+    background-image: $bpk-primary-gradient;
+    color: $bpk-color-white;
+
+    @include bpk-box-shadow-sm;
+
+    @include bpk-breakpoint-mobile {
+      $bpk-spacing-lg: 24px; 
+    }
+  }
+
+  &__header-inner {
+    @include container;
+  }
+
+  &__main {
+    $bpk-spacing-lg: 50px;
+
+    @include container;
+
+    @include bpk-breakpoint-mobile {
+      $bpk-spacing-base: 16px;
+    }
+  }
+
+  &__heading {
+    $bpk-spacing-sm: 10px;
+  }
+
+  &__text {
+    $bpk-spacing-sm: 10px;
+  }
+}
